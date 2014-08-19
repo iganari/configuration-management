@@ -36,6 +36,9 @@ yum --enablerepo=epel update epel-release -y
 yum --enablerepo=remi update remi-release -y 
 yum --enablerepo=rpmforge update rpmforge-release -y 
 
+# Installation of basic commands
+yum install tree telnet nkf mlocate -y
+
 # reboot for setting reflected
 reboot
 
