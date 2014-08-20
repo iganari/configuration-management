@@ -37,7 +37,7 @@ yum --enablerepo=remi update remi-release -y
 yum --enablerepo=rpmforge update rpmforge-release -y 
 
 # Installation of basic commands
-yum install tree telnet nkf mlocate -y
+yum install tree telnet nkf mlocate expect -y
 
 # Installation of service
 yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-server mysql-devel mysql-utilities -y
