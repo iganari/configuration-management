@@ -49,6 +49,6 @@ yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux
 
 
-# reboot for setting reflected
-reboot
+# # reboot for setting reflected
+# reboot
 
