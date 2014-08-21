@@ -13,6 +13,7 @@ service ip6tables stop
 # cancel unnecessary autostart
 chkconfig iptables off
 chkconfig ip6tables off
+chkconfig cups off
 
 # remove unnecessary autostart
 yum remove NetworkManager -y 
@@ -49,6 +50,6 @@ yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux
 
 
-# reboot for setting reflected
-reboot
+# # reboot for setting reflected
+# reboot
 
