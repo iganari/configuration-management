@@ -49,6 +49,8 @@ yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-
 # modify SELinux
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux
 
+# bash cumtom
+echo 'export PS1="\[\033[1;34m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile 
 
 # # reboot for setting reflected
 # reboot
