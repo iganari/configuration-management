@@ -28,5 +28,23 @@ service httpd restart
 service mysqld start
 chkconfig mysqld on
 
-# setting index
-cp ./source/index.php /var/www/html/
+# installing zabbix server
+rpm -ivh http://repo.zabbix.com/zabbix/2.2/rhel/6/x86_64/zabbix-release-2.2-1.el6.noarch.rpm
+sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/zabbix.repo
+
+yum install --enablerepo=zabbix --enablerepo=zabbix-non-supported zabbix-server-mysql zabbix-web-mysql zabbix-web-japanese zabbix-agent zabbix-get zabbix-web-japanese -y
+
+# setting mysql for zabbix
+mysql -uroot < ./source/zabbix_server.sql
+mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/schema.sql
+mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/images.sql
+mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/data.sql
+sed -i "s/# DBPassword=/DBPassword=server/g" /etc/zabbix/zabbix_server.conf
+
+# setting server 
+service zabbix-server start
+chkconfig zabbix-server on
+service httpd restart
+
+# # setting index
+# cp ./source/index.php /var/www/html/
