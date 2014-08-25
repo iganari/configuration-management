@@ -11,6 +11,9 @@ sed -i "s/#ServerName www\.example\.com:80/ServerName $HOSTNAME/g" /etc/httpd/co
 service httpd restart
 chkconfig httpd on
 
+# Installation of service by remi
+yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-server mysql-devel mysql-utilities -y
+
 # setting php
 cp -a /etc/php.ini /etc/php.ini.org
 sed -i "s/;mbstring.language = Japanese/mbstring.language = Japanese/g" /etc/php.ini

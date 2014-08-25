@@ -43,8 +43,6 @@ yum install tree telnet nkf mlocate expect ntp -y
 # Installation of basic commands
 yum install --enablerepo=epel tig -y
 
-# Installation of service
-yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd mysql-server mysql-devel mysql-utilities -y
 
 # modify SELinux
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux
