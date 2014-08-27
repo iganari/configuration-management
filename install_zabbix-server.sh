@@ -39,7 +39,7 @@ mysql -uroot < ./source/zabbix_server.sql
 mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/schema.sql
 mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/images.sql
 mysql -uzabbix -ppasswd  zabbix < /usr/share/doc/zabbix-server-mysql-2.2.5/create/data.sql
-sed -i "s/# DBPassword=/DBPassword=server/g" /etc/zabbix/zabbix_server.conf
+sed -i "s/# DBPassword=/DBPassword=passwd/g" /etc/zabbix/zabbix_server.conf
 
 # setting server 
 service zabbix-server start
