@@ -17,6 +17,7 @@ yum remove NetworkManager -y
 
 # upgrade centos
 yum upgrade -y
+
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
 
@@ -38,9 +39,7 @@ yum --enablerepo=remi update remi-release -y
 yum --enablerepo=rpmforge update rpmforge-release -y 
 
 # Installation of basic commands
-yum install tree telnet nkf mlocate expect ntp -y
-
-# Installation of basic commands
+yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig -y
 
 
