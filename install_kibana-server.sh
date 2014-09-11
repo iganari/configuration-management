@@ -20,6 +20,18 @@ service elasticsearch start
 chkconfig elasticsearch on
 
 # Fluentd
+## install Fluentd
+curl -L http://toolbelt.treasuredata.com/sh/install-redhat.sh | sh
+## change permisson
+chmod 755 /var/log/httpd
+## install fluent-plugin-elasticsearch
+yum -y install gcc libcurl-devel
+/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-elasticsearch
+
+## start td-agent and setting of autostart
+service td-agent start
+chkconfig td-agent on
+
 
 
 # Kibana
