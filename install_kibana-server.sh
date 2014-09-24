@@ -5,6 +5,7 @@
 
 # install basic web server
 /bin/bash -x install_web-server.sh
+sleep 20
 
 # install Elasticsearch
 ## for java
