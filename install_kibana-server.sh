@@ -37,6 +37,7 @@ chkconfig td-agent on
 
 # Kibana
 ## get and build Kibana
+mkdir -m 777 /deploy
 cd /deploy/
 wget http://download.elasticsearch.org/kibana/kibana/kibana-latest.zip
 unzip kibana-latest.zip
