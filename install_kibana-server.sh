@@ -5,6 +5,7 @@
 
 # install basic web server
 /bin/bash -x install_web-server.sh
+echo 'sleep 20'
 sleep 20
 
 # install Elasticsearch
