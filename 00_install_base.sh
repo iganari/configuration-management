@@ -17,6 +17,7 @@ yum remove NetworkManager -y
 
 # upgrade centos
 yum upgrade -y
+yum update bash -y
 
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
