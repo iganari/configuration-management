@@ -2,6 +2,11 @@
 #
 # create 2014/08/18
 
+# #### NOTE #####
+# running root !!
+# ###############
+
+
 # stop unnecessary service
 service NetworkManager stop
 service iptables stop
