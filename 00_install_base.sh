@@ -48,6 +48,11 @@ yum --enablerepo=rpmforge update rpmforge-release -y
 yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig -y
 
+# settinf ntpd service
+cp source/ntp.conf /etc/
+chmod 644 /etc/ntp.conf
+service ntpd restart
+chkconfig ntpd on
 
 # modify SELinux
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
