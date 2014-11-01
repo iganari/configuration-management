@@ -6,6 +6,8 @@
 # running root !!
 # ###############
 
+# difie Directory
+Dir=`pwd`
 
 # stop unnecessary service
 service NetworkManager stop
@@ -49,7 +51,7 @@ yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig -y
 
 # settinf ntpd service
-cp source/ntp.conf /etc/
+cp $Dir/source/ntp.conf /etc/
 chmod 644 /etc/ntp.conf
 service ntpd restart
 chkconfig ntpd on
