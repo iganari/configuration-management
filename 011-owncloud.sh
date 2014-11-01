@@ -6,6 +6,8 @@
 # running sudo user !!
 # ####################
 
+# difine Directory
+Dir=`pwd`
 
 cd /etc/yum.repos.d
 sudo wget http://download.opensuse.org/repositories/isv:ownCloud:community/CentOS_CentOS-6/isv:ownCloud:community.repo
@@ -13,7 +15,7 @@ sudo wget http://download.opensuse.org/repositories/isv:ownCloud:community/CentO
 sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/isv\:ownCloud\:community.repo
 
 sudo yum install --enablerepo=isv_ownCloud_community owncloud -y
-mysql -uroot < ./source/owncloud.sql
+mysql -uroot < $Dir/source/owncloud.sql
 
 
 
