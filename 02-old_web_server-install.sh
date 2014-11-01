@@ -2,6 +2,10 @@
 #
 # create 2014/08/18
 
+# #### NOTE #####
+# running root !!
+# ###############
+
 # setting apache
 yum install httpd -y
 
