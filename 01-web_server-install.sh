@@ -15,6 +15,9 @@ sed -i "s/#ServerName www\.example\.com:80/ServerName $HOSTNAME/g" /etc/httpd/co
 service httpd restart
 chkconfig httpd on
 
+# reset php
+yum remove php php-xml -y
+
 # Installation of service by remi
 yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd php-pdo mysql-server mysql-devel mysql-utilities -y
 
