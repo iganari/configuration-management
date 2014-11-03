@@ -15,6 +15,7 @@ sudo wget http://download.opensuse.org/repositories/isv:ownCloud:community/CentO
 sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/isv\:ownCloud\:community.repo
 
 sudo yum install --enablerepo=isv_ownCloud_community owncloud -y
+sudo serviec httpd restart
 mysql -uroot < $Dir/source/owncloud.sql
 
 
