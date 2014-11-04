@@ -1,3 +1,3 @@
 CREATE DATABASE owncloud;
-GRANT ALL PRIVILEGES ON admin.* to 'owncloud'@'localhost' IDENTIFIED BY 'igaguri7986';
-GRANT ALL PRIVILEGES ON lassi.* to 'owncloud'@'localhost' IDENTIFIED BY '318';
+GRANT ALL PRIVILEGES ON owncloud.* to 'admin'@'localhost' IDENTIFIED BY 'igaguri7986';
+GRANT ALL PRIVILEGES ON owncloud.* to 'lassi'@'localhost' IDENTIFIED BY '318';
