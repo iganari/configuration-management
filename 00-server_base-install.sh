@@ -48,7 +48,7 @@ yum --enablerepo=rpmforge update rpmforge-release -y
 
 # Installation of basic commands
 yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
-yum install --enablerepo=epel tig -y
+yum install --enablerepo=epel tig iftop -y
 
 # settinf ntpd service
 cp $Dir/source/ntp.conf /etc/
