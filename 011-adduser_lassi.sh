@@ -11,4 +11,4 @@ PASSWD='318'
 
 
 # add user
-useradd ${USER} -g wheel -p ${PASSWD}
+useradd ${USER} -g wheel -p `cat ./source/user-passwd`
