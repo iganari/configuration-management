@@ -59,10 +59,14 @@ chkconfig ntpd on
 # modify SELinux
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
 
-# bash cumtom
+# bash color custom
 echo 'export PS1="\[\033[1;34m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile 
 
-# # reboot for setting reflected
+# make /develop
+mkdir /develop
+chmod 777 /develop
+
+# reboot for setting reflected
 reboot
 
 

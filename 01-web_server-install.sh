@@ -34,3 +34,7 @@ chkconfig mysqld on
 
 # setting index
 cp ./source/index.php /var/www/html/
+
+# create sudo user
+echo 'adduser lassi -g wheel'
+echo 'passwd lassi' 
