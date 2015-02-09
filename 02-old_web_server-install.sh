@@ -16,7 +16,7 @@ service httpd restart
 chkconfig httpd on
 
 # Installation of service by remi
-yum install php php-devel php-mysql php-mbstring php-gd php-pdo mysql-server mysql-devel mysql-utilities -y
+yum install php php-devel php-mysql php-mbstring php-gd php-pdo php-xml mysql-server mysql-devel mysql-utilities -y
 
 # setting php
 cp -a /etc/php.ini /etc/php.ini.org
