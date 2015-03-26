@@ -52,6 +52,10 @@ yum --enablerepo=rpmforge update rpmforge-release -y
 yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig iftop -y
 
+# setting date
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 # settinf ntpd service
 cp ${basename}/source/ntp.conf /etc/
 chmod 644 /etc/ntp.conf
