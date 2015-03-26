@@ -7,6 +7,8 @@
 # ###############
 
 # difie Directory
+
+basename=$(cd `dirname $0`; pwd)
 Dir=`pwd`
 
 # stop unnecessary service
@@ -51,7 +53,7 @@ yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig iftop -y
 
 # settinf ntpd service
-cp $Dir/source/ntp.conf /etc/
+cp ${basename}/source/ntp.conf /etc/
 chmod 644 /etc/ntp.conf
 service ntpd restart
 chkconfig ntpd on
