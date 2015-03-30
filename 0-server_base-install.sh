@@ -9,7 +9,6 @@
 # difie Directory
 
 basename=$(cd `dirname $0`; pwd)
-Dir=`pwd`
 
 # stop unnecessary service
 service NetworkManager stop
