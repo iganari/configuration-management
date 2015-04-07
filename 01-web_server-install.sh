@@ -7,7 +7,7 @@
 # ###############
 
 # setting apache
-yum install httpd -y
+yum install httpd httpd-devel -y
 
 cp -a /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.org
 HOSTNAME=`hostname`
