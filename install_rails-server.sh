@@ -8,11 +8,13 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 ###  ## check version ruby
 rbenv install --list | grep -v "1.8.\|1.9.\|jruby\|rbx\|ree\|maglev\|mruby\|topaz"
 
+echo install version (e.g. 2.1.5)
+read rbv
 
 ## install CRuby
-rbenv install -v 2.1.2
+rbenv install -v ${rbv}
 ## setting default ruby
-rbenv global 2.1.2
+rbenv global ${rbv}
 ###  ## check ruby 
 ###  ruby -v
 ## optimization of gem
