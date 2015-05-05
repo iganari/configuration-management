@@ -3,31 +3,18 @@
 # created 2014/09/21
 
 
-###  # install basic web server
-###  /bin/bash -x install_web-server.sh
-###  echo 'sleep 20'
-###  sleep 20
-
-# install Ruby
-## clone rbenb
-cd 
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-
-## setting bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-## reload bash
-source ~/.bash_profile
-
 ## clone ruby-build
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 ###  ## check version ruby
-###  rbenv install --list
+rbenv install --list | grep -v "1.8.\|1.9.\|jruby\|rbx\|ree\|maglev\|mruby\|topaz"
+
+echo 'install version (e.g. 2.1.5)'
+read rbv
 
 ## install CRuby
-rbenv install -v 2.1.2
+rbenv install -v ${rbv}
 ## setting default ruby
-rbenv global 2.1.2
+rbenv global ${rbv}
 ###  ## check ruby 
 ###  ruby -v
 ## optimization of gem
