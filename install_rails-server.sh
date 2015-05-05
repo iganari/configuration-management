@@ -8,7 +8,7 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 ###  ## check version ruby
 rbenv install --list | grep -v "1.8.\|1.9.\|jruby\|rbx\|ree\|maglev\|mruby\|topaz"
 
-echo install version (e.g. 2.1.5)
+echo 'install version (e.g. 2.1.5)'
 read rbv
 
 ## install CRuby
