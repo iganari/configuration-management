@@ -27,6 +27,9 @@ yum remove NetworkManager -y
 yum upgrade -y
 yum update bash -y
 
+# Installation of basic commands
+yum install wget vim tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
+
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
 
@@ -47,8 +50,7 @@ yum --enablerepo=epel update epel-release -y
 yum --enablerepo=remi update remi-release -y 
 yum --enablerepo=rpmforge update rpmforge-release -y 
 
-# Installation of basic commands
-yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
+# Installation of advance commands
 yum install --enablerepo=epel tig iftop htop -y
 
 # setting date
