@@ -73,20 +73,6 @@ echo 'export PS1="\[\033[1;34m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile
 mkdir /develop
 chmod 777 /develop
 
-# ---------------------------------------------------------- # 
-# install Ruby
-## clone rbenb
-cd
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-
-## setting bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-
-## reload bash
-### source ~/.bash_profile
-# ---------------------------------------------------------- # 
-
 
 # reboot for setting reflected
 reboot
