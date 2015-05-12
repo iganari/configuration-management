@@ -28,7 +28,7 @@ yum upgrade -y
 yum update bash -y
 
 # Installation of basic commands
-yum install wget vim tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
+yum install gcc openssl openssl-devel wget vim tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
