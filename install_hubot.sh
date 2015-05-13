@@ -1,19 +1,12 @@
 #!/bin/bash
 #
-# created 2014/09/21
+# created 2015/05/05
 
-# ---------------------------------------------------------- # 
-# install Ruby
-## clone rbenb
-cd
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-
-## setting bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-
-## reload bash
-source ~/.bash_profile
+# ------------------
+#
+# Do not root ! 
+#
+# ------------------
 
 ## clone ruby-build
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -28,7 +21,7 @@ rbenv install -v ${rbv}
 ## setting default ruby
 rbenv global ${rbv}
 ###  ## check ruby 
-ruby -v
+###  ruby -v
 ## optimization of gem
 gem install rbenv-rehash
 
