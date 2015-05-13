@@ -27,9 +27,6 @@ yum remove NetworkManager -y
 yum upgrade -y
 yum update bash -y
 
-# Installation of basic commands
-yum install gcc openssl openssl-devel wget vim tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
-
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
 
@@ -50,7 +47,8 @@ yum --enablerepo=epel update epel-release -y
 yum --enablerepo=remi update remi-release -y 
 yum --enablerepo=rpmforge update rpmforge-release -y 
 
-# Installation of advance commands
+# Installation of basic commands
+yum install tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 yum install --enablerepo=epel tig iftop htop -y
 
 # setting date
@@ -72,6 +70,20 @@ echo 'export PS1="\[\033[1;34m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile
 # make /develop
 mkdir /develop
 chmod 777 /develop
+
+# ---------------------------------------------------------- # 
+# install Ruby
+## clone rbenb
+cd
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+
+## setting bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+## reload bash
+### source ~/.bash_profile
+# ---------------------------------------------------------- # 
 
 
 # reboot for setting reflected
