@@ -75,17 +75,17 @@ mkdir /develop
 chmod 777 /develop
 
 # ---------------------------------------------------------- # 
-# install Ruby
-## clone rbenb
-cd
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-
-## setting bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-
-## reload bash
-### source ~/.bash_profile
+###  # install Ruby
+###  ## clone rbenb
+###  cd
+###  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+###  
+###  ## setting bash
+###  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+###  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+###  
+###  ## reload bash
+###  ### source ~/.bash_profile
 # ---------------------------------------------------------- # 
 
 
