@@ -18,7 +18,6 @@ service ip6tables stop
 # cancel unnecessary autostart
 chkconfig iptables off
 chkconfig ip6tables off
-chkconfig cups off
 
 # remove unnecessary autostart
 yum remove NetworkManager -y 
