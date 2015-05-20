@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Do you want to what the name of your user name ? (e.g. lassi)"
+# ----------
+# run root !
+# ----------
+
+echo "Do you want to what the name of wheel user name ? (e.g. lassi)"
 read u_name
 
 echo "Plz setting ${u_name}'s password (e.g. qwertyuiop)"
@@ -13,3 +17,12 @@ passwd ${u_name} << EOS
 ${u_passwd}
 ${u_passwd}
 EOS
+
+### sudo setting 
+chmod 755 /etc/sudoers
+echo  '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+chmod 440 /etc/sudoers
+
+### limited the account to become root
+echo 'auth           sufficient      pam_wheel.so trust use_uid' >> /etc/pam.d/su
+echo 'auth           required        pam_wheel.so use_uid'       >> /etc/pam.d/su
