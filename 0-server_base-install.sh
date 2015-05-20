@@ -28,7 +28,7 @@ yum upgrade -y
 yum update bash -y
 
 # Installation of basic commands
-yum install openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
+yum install wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
 
 
 # Downloading and installing third-repository
