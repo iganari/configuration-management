@@ -63,6 +63,14 @@ chmod 644 /etc/ntp.conf
 service ntpd restart
 chkconfig ntpd on
 
+
+# disable the ipv6
+echo "# ipv6 disable                        " >> /etc/sysctl.conf 
+echo "net.ipv6.conf.all.disable_ipv6 = 1    " >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+
+
+
 # modify SELinux
 sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
 
