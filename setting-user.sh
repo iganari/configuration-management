@@ -6,5 +6,10 @@ read u_name
 echo "Plz setting ${u_name}'s password (e.g. qwertyuiop)"
 read u_passwd
 
-echo "adduser ${u_name} -g wheel"
-echo "passwd lassi ${u_passwd}"
+### create user
+adduser ${u_name} -g wheel
+### setting password using here document
+passwd ${u_name} ${u_passwd} << EOS
+${u_passwd}
+${u_passwd}
+EOS
