@@ -20,7 +20,7 @@ EOS
 
 ### sudo setting 
 chmod 755 /etc/sudoers
-echo  '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+sed "105a %wheel ALL=(ALL) NOPASSWD: ALL" /etc/sudoers
 chmod 440 /etc/sudoers
 
 ### limited the account to become root
