@@ -29,3 +29,4 @@ sed -i "4a auth           sufficient      pam_wheel.so trust use_uid" /etc/pam.d
 
 ### Reject root login
 sed -i "42a PermitRootLogin no"                                       /etc/ssh/sshd_config
+service ssh reload
