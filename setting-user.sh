@@ -20,9 +20,9 @@ EOS
 
 ### sudo setting 
 chmod 755 /etc/sudoers
-echo  '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+sed -i "105a %wheel ALL=(ALL) NOPASSWD: ALL" /etc/sudoers
 chmod 440 /etc/sudoers
 
 ### limited the account to become root
-echo 'auth           sufficient      pam_wheel.so trust use_uid' >> /etc/pam.d/su
-echo 'auth           required        pam_wheel.so use_uid'       >> /etc/pam.d/su
+sed -i "6a auth           required        pam_wheel.so use_uid"       /etc/pam.d/su
+sed -i "4a auth           sufficient      pam_wheel.so trust use_uid" /etc/pam.d/su
