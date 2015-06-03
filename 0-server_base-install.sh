@@ -27,7 +27,7 @@ yum upgrade -y
 yum update bash -y
 
 # Installation of basic commands
-yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils -y
+yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils readline-devel readline-static -y
 
 
 # Downloading and installing third-repository
