@@ -14,10 +14,14 @@ basename=$(cd `dirname $0`; pwd)
 service NetworkManager stop
 service iptables stop
 service ip6tables stop
+service kdump stop
+
 
 # cancel unnecessary autostart
 chkconfig iptables off
 chkconfig ip6tables off
+chkconfig kdump off
+
 
 # remove unnecessary autostart
 yum remove NetworkManager -y 
@@ -27,14 +31,15 @@ yum upgrade -y
 yum update bash -y
 
 # Installation of basic commands
-yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils readline-devel readline-static -y
+yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils readline-devel readline-static dstat -y
 
 
 # Downloading and installing third-repository
 yum install yum-plugin-priorities -y
+yum install epel-release -y
 
 cd /tmp
-wget http://ftp.riken.jp/Linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm http://rpms.famillecollet.com/enterprise/remi-release-6.rpm http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+wget  http://rpms.famillecollet.com/enterprise/remi-release-6.rpm http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 rpm -ivh *.rpm
 
 # Rewriting of Priority
@@ -54,7 +59,7 @@ yum --enablerepo=rpmforge update rpmforge-release -y
 yum install --enablerepo=epel tig iftop htop -y
 
 # setting date
-rm /etc/localtime
+rm -rf /etc/localtime
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # settinf ntpd service
