@@ -14,10 +14,14 @@ basename=$(cd `dirname $0`; pwd)
 service NetworkManager stop
 service iptables stop
 service ip6tables stop
+service kdump stop
+
 
 # cancel unnecessary autostart
 chkconfig iptables off
 chkconfig ip6tables off
+chkconfig kdump off
+
 
 # remove unnecessary autostart
 yum remove NetworkManager -y 
@@ -27,7 +31,7 @@ yum upgrade -y
 yum update bash -y
 
 # Installation of basic commands
-yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils readline-devel readline-static -y
+yum install vim wget openssl openssl-devel tree telnet nkf mlocate expect ntp net-snmp net-snmp-utils readline-devel readline-static dstat -y
 
 
 # Downloading and installing third-repository
