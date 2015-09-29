@@ -3,3 +3,5 @@ CM: Configuration Management
 
 CentOS 6.x系を想定
 
+
+これから更新していく
