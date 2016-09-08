@@ -54,7 +54,7 @@ sed -i "37i\enabled = 1" /etc/yum.repos.d/CentOS-Base.repo
 # update third-repository
 yum --enablerepo=epel update epel-release -y 
 yum --enablerepo=remi update remi-release -y 
-yum --enablerepo=rpmforge update rpmforge-release -y 
+# yum --enablerepo=rpmforge update rpmforge-release -y 
 
 # Installation of basic commands from rpm
 yum install --enablerepo=epel tig iftop htop -y
@@ -74,7 +74,7 @@ chkconfig ntpd on
 echo "# ipv6 disable                        " >> /etc/sysctl.conf 
 echo "net.ipv6.conf.all.disable_ipv6 = 1    " >> /etc/sysctl.conf
 echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-
+sed -i '2d' /etc/hosts    # 2行目を消去
 
 
 # modify SELinux
