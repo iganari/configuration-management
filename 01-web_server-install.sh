@@ -7,7 +7,7 @@
 # ###############
 
 # setting apache
-yum install httpd httpd-devel -y
+yum install -y httpd httpd-devel
 
 cp -a /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.org
 HOSTNAME=`hostname`
@@ -16,7 +16,7 @@ service httpd restart
 chkconfig httpd on
 
 # Installation of service by remi
-yum --enablerepo=remi install php php-devel php-mysql php-mbstring php-gd php-pdo php-xml mysql-server mysql-devel mysql-utilities -y
+yum install -y --enablerepo=remi --enablerepo=remi-php56 php php-devel php-mysql php-mbstring php-gd php-pdo php-xml mysql-server mysql-devel mysql-utilities
 
 # setting php
 cp -a /etc/php.ini /etc/php.ini.org
