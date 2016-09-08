@@ -39,13 +39,14 @@ yum install yum-plugin-priorities -y
 yum install epel-release -y
 
 cd /tmp
-wget  http://rpms.famillecollet.com/enterprise/remi-release-6.rpm http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
+wget  http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+# wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 rpm -ivh *.rpm
 
 # Rewriting of Priority
 cp -a /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.org
 sed -i "s/enabled=1/enabled=0/g" /etc/yum.repos.d/epel.repo
-sed -i "s/enabled = 1/enabled = 0/g" /etc/yum.repos.d/rpmforge.repo
+# sed -i "s/enabled = 1/enabled = 0/g" /etc/yum.repos.d/rpmforge.repo
 sed -i "19i\enabled = 1" /etc/yum.repos.d/CentOS-Base.repo
 sed -i "28i\enabled = 1" /etc/yum.repos.d/CentOS-Base.repo
 sed -i "37i\enabled = 1" /etc/yum.repos.d/CentOS-Base.repo
