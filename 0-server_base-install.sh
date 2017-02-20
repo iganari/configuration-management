@@ -84,7 +84,7 @@ sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
 ### setenforce 0
 
 # bash color custom
-echo 'export PS1="\[\033[1;34m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile 
+echo 'export PS1="\[\033[1;35m\][\t][\u@\h \W]\\$\[\033[0m\] "' >> /etc/profile 
 
 # make /develop
 mkdir /develop
